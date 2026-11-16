@@ -1,0 +1,464 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCI Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <h2 class="logo">Portfolio HCI Assignment.</h2>
+
+        <a href="secret.html" class="linkedin-btn">
+            LinkedIn Site
+        </a>
+    </nav>
+
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+            <h1>Hi, I'm <span>Muhammad Rafif Deka Saputra</span></h1>
+            <h2>Computer Science Student</h2>
+
+            <p>
+                Welcome to my portfolio page. <br>
+                Here you can find information about me <br>
+                Contact me.
+            </p>
+
+            <div class="buttons">
+                <a href="#contact" class="primary-btn">Contact</a>
+                <a href="#about" class="secondary-btn">See Accomplishments</a>
+            </div>
+        </div>
+
+        <img src="images/MEyessir234.png"
+             alt="Me picture"
+             class="profile-img">
+
+    </section>
+
+    
+<!-- SECOND SECTION: HORIZONTAL MENU -->
+<section class="menu-section" id="about">
+
+    <div class="menu-heading">
+        <h1>Explore My Portfolio</h1>
+
+        <button class="hamburger" id="menuToggle"
+                aria-label="Toggle navigation menu"
+                aria-expanded="true"
+                aria-controls="menuTrack">
+            &#9776;
+        </button>
+    </div>
+
+    <div class="menu-wrapper">
+
+        <button class="scroll-btn" id="scrollLeft"
+                aria-label="Scroll menu left">
+            &#10094;
+        </button>
+
+        <div class="menu-track" id="menuTrack">
+
+            <a href="#about-me" class="menu-card" data-popup="about-me"> 
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="7" r="4"/>
+                    <path d="M4 21v-2a8 8 0 0 1 16 0v2"/>
+                </svg>
+                <h2>About Me</h2>
+            </href=>
+
+            <a href="#skills" class="menu-card" data-popup="skills">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8 5 2 12l6 7"/>
+                    <path d="m16 5 6 7-6 7"/>
+                    <path d="m14 3-4 18"/>
+                </svg>
+                <h2>Skills</h2>
+            </a>
+
+           <a href="#projects" class="menu-card" data-popup="projects">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 7h7l2 3h9v10H3z"/>
+                    <path d="M3 7V4h7l2 3"/>
+                </svg>
+                <h2>Projects</h2>
+            </a>
+
+           <a href="#contact" class="menu-card" data-popup="contact">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="2" y="5" width="20" height="14" rx="2"/>
+                    <path d="m2 7 10 7 10-7"/>
+                </svg>
+                <h2>Contact</h2>
+            </a>
+
+        </div>
+
+        <button class="scroll-btn" id="scrollRight"
+                aria-label="Scroll menu right">
+            &#10095;
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- DESTINATION SECTIONS -->
+
+
+<!-- POPUP OVERLAY -->
+<div class="popup-overlay" id="popupOverlay" hidden>
+
+    <div class="popup-box" role="dialog"
+         aria-modal="true" aria-labelledby="popupTitle">
+
+        <button class="popup-close" id="popupClose"
+                aria-label="Close popup">&times;</button>
+
+        <h1 id="popupTitle"></h1>
+        <div id="popupContent"></div>
+
+    </div>
+</div>
+
+<!-- HIDDEN POPUP CONTENT -->
+
+
+<!-- ABOUT ME POPUP -->
+<template id="about-me-content">
+    <p>
+        I am a first-year Computer Science student
+        interested in technology, sports and practical skills.
+    </p>
+
+    <h2>Social Media</h2>
+
+    <a href="https://www.instagram.com"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="social-box">
+
+        <span class="social-icon">◎</span>
+
+        <div>
+            <strong>Instagram</strong>
+            <p>Visit my Instagram profile</p>
+        </div>
+
+        <span class="social-arrow">↗</span>
+    </a>
+</template>
+
+
+<!-- SKILLS POPUP -->
+<template id="skills-content">
+
+    <h2>Academic Progress</h2>
+
+    <p>Computer Science — Year 1</p>
+
+    <div class="progress-info">
+        <span>Year 1 Progress</span>
+        <strong>66%</strong>
+    </div>
+
+    <div class="progress-track"
+         role="progressbar"
+         aria-label="Year 1 progress"
+         aria-valuenow="66"
+         aria-valuemin="0"
+         aria-valuemax="100">
+
+        <div class="progress-fill"></div>
+    </div>
+
+    <p>66% completed — 34% remaining.</p>
+
+    <h2>Skills</h2>
+
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Python</li>
+        <li>Discrete Mathematics</li>
+    </ul>
+
+</template>
+
+
+<!-- PROJECTS POPUP -->
+<template id="projects-content">
+
+    <p>
+        Click a project image or its download icon
+        to download the corresponding file.
+    </p>
+
+    <div class="project-grid">
+
+        <a href="projects/project1.zip"
+           download
+           class="project-download">
+
+            <span class="download-icon">↓</span>
+
+            <img src="images/html.png"
+                 alt="Project 1 preview">
+
+            <h3>Project 1</h3>
+        </a>
+
+        <a href="projects/project2.pdf"
+           download
+           class="project-download">
+
+            <span class="download-icon">↓</span>
+
+            <img src="images/Java.png"
+                 alt="Project 2 preview">
+
+            <h3>Project 2</h3>
+        </a>
+
+        <a href="projects/project3.zip"
+           download
+           class="project-download">
+
+            <span class="download-icon">↓</span>
+
+            <img src="images/HTMLDUDE.jpg"
+                 alt="Project 3 preview">
+
+            <h3>Project 3</h3>
+        </a>
+        <a href="projects/project4.pdf"
+   download
+   class="project-download">
+
+    <span class="download-icon">↓</span>
+
+    <img src="images/pythonlogo.png"
+         alt="Project 4 preview">
+
+    <h3>Project 4</h3>
+</a>
+    </div>
+</template>
+
+
+<!-- CONTACT POPUP -->
+<template id="contact-content">
+
+    <p>Click a contact box to copy its information.</p>
+
+    <div class="contact-list">
+
+        <button type="button"
+                class="contact-box"
+                data-copy="muhammad.saputra049@gmail.com">
+
+            <span class="contact-icon">✉</span>
+
+            <span class="contact-details">
+                <strong>Gmail</strong>
+                <span>muhammad.saputra049@gmail.com</span>
+                <small class="copy-label">Click to copy</small>
+            </span>
+
+            <span class="copy-symbol">▢</span>
+        </button>
+
+        <button type="button"
+                class="contact-box"
+                data-copy="muhammad.saputra049@outlook.com">
+
+            <span class="contact-icon">✉</span>
+
+            <span class="contact-details">
+                <strong>Outlook</strong>
+                <span>muhammad.saputra049@outlook.com</span>
+                <small class="copy-label">Click to copy</small>
+            </span>
+
+            <span class="copy-symbol">▢</span>
+        </button>
+
+        <button type="button"
+                class="contact-box"
+                data-copy="+6239823923502">
+
+            <span class="contact-icon">☎</span>
+
+            <span class="contact-details">
+                <strong>Phone Number</strong>
+                <span>+6239823923502</span>
+                <small class="copy-label">Click to copy</small>
+            </span>
+
+            <span class="copy-symbol">▢</span>
+        </button>
+
+    </div>
+
+</template>
+
+<script>
+    const menuToggle = document.getElementById("menuToggle");
+    const menuTrack = document.getElementById("menuTrack");
+    const scrollLeft = document.getElementById("scrollLeft");
+    const scrollRight = document.getElementById("scrollRight");
+
+    menuToggle.addEventListener("click", function() {
+        menuTrack.classList.toggle("is-hidden");
+
+        const expanded = !menuTrack.classList.contains("is-hidden");
+
+        menuToggle.setAttribute("aria-expanded", expanded);
+        scrollLeft.hidden = !expanded;
+        scrollRight.hidden = !expanded;
+    });
+
+    scrollRight.addEventListener("click", function() {
+        menuTrack.scrollBy({
+            left: 240,
+            behavior: "smooth"
+        });
+    });
+
+    scrollLeft.addEventListener("click", function() {
+        menuTrack.scrollBy({
+            left: -240,
+            behavior: "smooth"
+        });
+    });
+</script>
+
+<script>
+    const popupOverlay = document.getElementById("popupOverlay");
+    const popupClose = document.getElementById("popupClose");
+    const popupTitle = document.getElementById("popupTitle");
+    const popupContent = document.getElementById("popupContent");
+
+    const popupTitles = {
+        "about-me": "About Me",
+        "skills": "My Skills",
+        "projects": "My Projects",
+        "contact": "Contact Me"
+    };
+
+    let previousFocus = null;
+
+    function openPopup(id) {
+        const template = document.getElementById(id + "-content");
+
+        if (!template) return;
+
+        previousFocus = document.activeElement;
+        popupTitle.textContent = popupTitles[id];
+        popupContent.replaceChildren(
+            template.content.cloneNode(true)
+        );
+
+        popupOverlay.hidden = false;
+        document.body.classList.add("popup-open");
+        popupClose.focus();
+    }
+
+    function closePopup() {
+        popupOverlay.hidden = true;
+        document.body.classList.remove("popup-open");
+        popupContent.replaceChildren();
+
+        if (previousFocus) previousFocus.focus();
+    }
+
+    document.querySelectorAll("[data-popup]").forEach(button => {
+        button.addEventListener("click", function(event) {
+            event.preventDefault();
+            openPopup(this.dataset.popup);
+        });
+    });
+
+    popupClose.addEventListener("click", closePopup);
+
+    popupOverlay.addEventListener("click", function(event) {
+        if (event.target === popupOverlay) {
+            closePopup();
+        }
+    });
+
+    document.addEventListener("keydown", function(event) {
+        if (popupOverlay.hidden) return;
+
+        if (event.key === "Escape") {
+            closePopup();
+        }
+
+        if (event.key === "Tab") {
+            const controls = popupOverlay.querySelectorAll(
+                'a[href], button:not([disabled]), input, textarea, select, [tabindex]:not([tabindex="-1"])'
+            );
+
+            const first = controls[0];
+            const last = controls[controls.length - 1];
+
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
+        }
+    });
+
+    // Make the main Contact button open the same popup
+    document.querySelectorAll('a.primary-btn[href="#contact"]')
+        .forEach(button => {
+            button.addEventListener("click", function(event) {
+                event.preventDefault();
+                openPopup("contact");
+            });
+        });
+</script>
+
+<script>
+    document.getElementById("popupContent")
+        .addEventListener("click", async function(event) {
+
+            const button = event.target.closest(".contact-box");
+
+            if (!button) return;
+
+            const value = button.getAttribute("data-copy");
+            const label = button.querySelector(".copy-label");
+
+            try {
+                await navigator.clipboard.writeText(value);
+
+                label.textContent = "Copied!";
+                label.style.color = "#ffd700";
+
+                setTimeout(function() {
+                    label.textContent = "Click to copy";
+                    label.style.color = "#10fe03";
+                }, 1500);
+
+            } catch (error) {
+                label.textContent = "Copy failed";
+                console.error("Clipboard error:", error);
+            }
+        });
+</script>
+
+</body>
+</html>
